@@ -17,27 +17,61 @@ package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextGeometricTransform
 import androidx.compose.ui.unit.sp
+import com.example.androiddevchallenge.R
+
+val KulimPark = FontFamily(
+  Font(R.font.kulimpark_light, FontWeight.Light),
+  Font(R.font.kulimpark_regular, FontWeight.Normal),
+)
+
+val Lato = FontFamily(
+  Font(R.font.lato_regular, FontWeight.Normal),
+  Font(R.font.lato_bold, FontWeight.Bold),
+)
 
 // Set of Material typography styles to start with
 val typography = Typography(
-    body1 = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
-    )
-        /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
-    ),
-    caption = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
-    )
-    */
+  defaultFontFamily = Lato,
+  h1 = TextStyle(
+    fontFamily = KulimPark,
+    fontSize = 28.sp,
+    fontWeight = FontWeight.Light,
+    letterSpacing = 1.15.sp,
+  ),
+  h2 = TextStyle(
+    fontFamily = KulimPark,
+    fontSize = 15.sp,
+    fontWeight = FontWeight.Normal,
+    letterSpacing = 1.15.sp,
+  ),
+  h3 = TextStyle(
+    fontFamily = Lato,
+    fontSize = 14.sp,
+    fontWeight = FontWeight.Bold,
+    letterSpacing = 0.sp,
+  ),
+  body1 = TextStyle(
+    fontFamily = Lato,
+    fontSize = 14.sp,
+    fontWeight = FontWeight.Normal,
+    letterSpacing = 0.sp,
+  ),
+  button = TextStyle(
+    fontFamily = Lato,
+    fontSize = 14.sp,
+    fontWeight = FontWeight.Bold,
+    letterSpacing = 1.15.sp,
+  ),
+  caption = TextStyle(
+    fontFamily = KulimPark,
+    fontSize = 12.sp,
+    fontWeight = FontWeight.Normal,
+    letterSpacing = 1.15.sp,
+  ),
 )
