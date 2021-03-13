@@ -18,11 +18,13 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigate
@@ -35,10 +37,25 @@ import com.example.androiddevchallenge.ui.theme.MyTheme
 class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContent {
-      MyTheme {
-        MyApp()
+
+    WindowCompat.setDecorFitsSystemWindows(window, false)
+
+    ComposeView(this).apply {
+      ViewCompat.setOnApplyWindowInsetsListener(this) { v, insets ->
+        v.updatePadding(
+          top = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top,
+          bottom = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom
+        )
+        WindowInsetsCompat.CONSUMED
       }
+
+      setContent {
+        MyTheme {
+          MyApp()
+        }
+      }
+
+      setContentView(this)
     }
   }
 }

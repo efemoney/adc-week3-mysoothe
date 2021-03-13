@@ -75,7 +75,7 @@ fun HomeScreen() {
     floatingActionButtonPosition = FabPosition.Center,
     isFloatingActionButtonDocked = true,
 
-    ) { paddingValues ->
+  ) { paddingValues ->
 
     Column(
       Modifier
@@ -187,7 +187,6 @@ private val Alignments = mapOf(
   ),
 )
 
-
 @OptIn(ExperimentalStdlibApi::class)
 @Composable
 private fun HomeScreenNav() {
@@ -215,7 +214,6 @@ val NavigationItems = listOf(
   "Home" to Icons.Default.Spa,
   "Profile" to Icons.Default.AccountCircle,
 )
-
 
 @Composable
 private fun FavoriteCollections() {
@@ -288,7 +286,6 @@ private val Faves = listOf(
   "Overwhelmed" to "https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg?cs=srgb&dl=pexels-ruvim-3560044.jpg&fm=jpg",
   "Nightly wind down" to "https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?cs=srgb&dl=pexels-jakub-novacek-924824.jpg&fm=jpg"
 )
-
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
